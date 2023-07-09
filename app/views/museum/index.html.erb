@@ -1,0 +1,20 @@
+<div class="container">
+  <form action="/museums" method="GET">
+    <label for="latitude">Latitude:</label>
+    <input type="text" id="latitude" name="latitude" placeholder="Enter latitude" required>
+
+    <label for="longitude">Longitude:</label>
+    <input type="text" id="longitude" name="longitude" placeholder="Enter longitude" required>
+
+    <input type="submit" value="Search">
+  </form>
+</div>
+<div class="container">
+  <% if @museums  %>
+    <% @museums.each do |mu|%>
+      <%= mu["context"][0]["text"]%> :  <%=mu["place_name"] %>
+      <br>
+    <% end %>
+
+  <% end %>
+</div>
